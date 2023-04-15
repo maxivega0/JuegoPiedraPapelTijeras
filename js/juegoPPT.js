@@ -27,54 +27,61 @@ function juego() {
 function piedra() {
   maquina = eleccionMaquina();
   let resultado = "";
+  let parrafo = document.createElement("p");
   if (maquina === 1) {
     resultado = `¡Es un empate!<br>`;
     maquina = 'Piedra';
+    parrafo.innerHTML = `<div class="alert alert-warning my-3">Piedra vs ${maquina}: ${resultado}</div> `;
   } else if (maquina === 2) {
     resultado = `¡Usted perdió!<br>`;
     maquina = 'Papel';
+    parrafo.innerHTML = `<div class="alert alert-danger my-3">Piedra vs ${maquina}: ${resultado}</div> `;
   } else {
     resultado = `¡Usted ganó!<br>`;
     maquina = 'Tijeras';
+    parrafo.innerHTML = `<div class="alert alert-success my-3">Piedra vs ${maquina}: ${resultado}</div> `;
   }
-  let parrafo = document.createElement("p");
-  parrafo.innerHTML = `Piedra vs ${maquina}: ${resultado} `;
   seccionPadre.appendChild(parrafo);
   i++;
 }
 function papel() {
   maquina = eleccionMaquina();
   let resultado = "";
+  let parrafo = document.createElement("p");
   if (maquina === 1) {
     resultado = `¡Usted ganó!<br>`;
     maquina = 'Piedra';
+    parrafo.innerHTML = `<div class="alert alert-success my-3">Papel vs ${maquina}: ${resultado}</div> `;
   } else if (maquina === 2) {
     resultado = `¡Es un empate!<br>`;
     maquina = 'Papel';
+    parrafo.innerHTML = `<div class="alert alert-warning my-3">Papel vs ${maquina}: ${resultado}</div> `;
   } else {
     resultado = `¡Usted perdió!<br>`;
     maquina = 'Tijeras';
+    parrafo.innerHTML = `<div class="alert alert-danger my-3">Papel vs ${maquina}: ${resultado}</div> `;
   }
-  let parrafo = document.createElement("p");
-  parrafo.innerHTML = `Papel vs ${maquina}: ${resultado} `;
+
   seccionPadre.appendChild(parrafo);
   i++;
 }
 function tijeras() {
   maquina = eleccionMaquina();
   let resultado = "";
+  let parrafo = document.createElement("p");
   if (maquina === 1) {
     resultado = `¡Usted perdió!<br>`;
     maquina = 'Piedra';
+    parrafo.innerHTML = `<div class="alert alert-danger my-3">Tijeras vs ${maquina}: ${resultado}</div> `;
   } else if (maquina === 2) {
     resultado = `¡Usted ganó!<br>`;
-    maquina = 'Papel'
+    maquina = 'Papel';
+    parrafo.innerHTML = `<div class="alert alert-success my-3">Tijeras vs ${maquina}: ${resultado}</div> `;
   } else {
     resultado = `¡Es un empate!<br>`;
     maquina = 'Tijeras';
+    parrafo.innerHTML = `<div class="alert alert-warning my-3">Tijeras vs ${maquina}: ${resultado}</div> `;
   }
-  let parrafo = document.createElement("p");
-  parrafo.innerHTML = `Tijeras vs ${maquina}: ${resultado} `;
   seccionPadre.appendChild(parrafo);
   i++;
 }
